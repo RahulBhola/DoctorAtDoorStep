@@ -4,6 +4,7 @@ import PasswordInput from "./PasswordInput";
 import { Link, useNavigate } from "react-router-dom";
 import { makeUnauthenticatedPOSTRequest } from "../../utils/serverHelpers";
 import { useCookies } from "react-cookie";
+import loginImg from "../../assets/signImg.png";
 
 function UserLogin() {
   const [email, setEmail] = useState("");
@@ -15,6 +16,7 @@ function UserLogin() {
   const login = async () => {
     const data = { email, password };
     const response = await makeUnauthenticatedPOSTRequest("/auth/login", data);
+
     if (response && !response.err) {
       const token = response.token;
       const date = new Date();
@@ -34,7 +36,7 @@ function UserLogin() {
           <img
             className="rounded-full shadow-md shadow-gray-700"
             style={{ height: 180, width: 170, marginBottom: 30 }}
-            src="https://img.freepik.com/free-vector/hand-drawn-doctor-answer-questions-clipart-gesture-character_40876-3115.jpg?t=st=1709919298~exp=1709922898~hmac=13038ed9e6870f1206138064379b20411b364da3e4d69dc042465294f218c365&w=740"
+            src={loginImg}
             alt="/"
           />
           <h2 className="text-gray-300">
@@ -78,21 +80,19 @@ function UserLogin() {
           </Link>
         </div>
 
-        <div className="bg-emerald-600/80 w-full  h-[150px]">
-          <div className="flex justify-around">
-            <div>
-              <p className="m-1">Door-stop</p>
-              <p className="m-1">Emergency</p>
-              <p className="m-1">All Categories</p>
-            </div>
-            <div>
-              <p className="m-1">Specialist</p>
-              <p className="m-1">Doctors</p>
-              <p className="m-1">Blood bank</p>
-            </div>
+        <div className="bg-emerald-600/80 w-full h-[150px] flex justify-around py-10">
+          <div className="flex flex-col">
+            <p className="m-1">Door-stop</p>
+            <p className="m-1">Emergency</p>
+            <p className="m-1">All Categories</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="m-1">Specialist</p>
+            <p className="m-1">Doctors</p>
+            <p className="m-1">Blood bank</p>
           </div>
         </div>
-        <div className="bg-emerald-600/80">
+        <div className="bg-emerald-600/80 pt-7">
           <p className="ml-20 pb-3">Copyright © 2024 Capstone Team</p>
         </div>
       </div>

@@ -13,6 +13,7 @@ import Kidney from "./components/categories/Kidney";
 import Lungs from "./components/categories/Lungs";
 import Liver from "./components/categories/Liver";
 import { useCookies } from "react-cookie";
+import ContactForm from "./components/ContactForm";
 
 const App = () => {
   const [cookie, setCookie] = useCookies(["token"]);
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/body/kidney" element={<Kidney />} />
           <Route path="/body/lungs" element={<Lungs />} />
           <Route path="/body/liver" element={<Liver />} />
+          <Route path="/contact" element={<ContactForm />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       ) : (

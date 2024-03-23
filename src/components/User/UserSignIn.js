@@ -4,6 +4,7 @@ import PasswordInput from "./PasswordInput";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { makeUnauthenticatedPOSTRequest } from "../../utils/serverHelpers";
+import signImg from "../../assets/signImg.png";
 
 function UserSignIn() {
   const [email, setEmail] = useState("");
@@ -45,8 +46,8 @@ function UserSignIn() {
       <div className="flex flex-col items-center p-6 h-900 bg-emerald-600/80 rounded-tr-full rounded-tl-3xl w-full">
         <img
           className="rounded-full shadow-md shadow-gray-700 mb-6"
-          style={{ height: 180, width: 170 }}
-          src="https://img.freepik.com/free-vector/hand-drawn-doctor-answer-questions-clipart-gesture-character_40876-3115.jpg?t=st=1709919298~exp=1709922898~hmac=13038ed9e6870f1206138064379b20411b364da3e4d69dc042465294f218c365&w=740"
+          style={{ height: 180, width: 200 }}
+          src={signImg}
           alt="Doctor"
         />
         <h2 className="text-gray-300">

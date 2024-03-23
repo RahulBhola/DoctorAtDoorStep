@@ -1,18 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import img1 from "./login.png";
 import img1 from "../assets/starterImg.png";
 import { FaPlusCircle } from "react-icons/fa";
 import { CiLocationArrow1 } from "react-icons/ci";
+import { makeUnauthenticatedPOSTRequest } from "../utils/serverHelpers";
 
 const StarterPage = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    // Perform authentication logic if needed
+  useEffect(() => {
+    fetchEmailAndPassword();
+  }, []);
 
-    // Navigate to the Welcome component
-    navigate("/login");
+  const fetchEmailAndPassword = async () => {
+    try {
+      const response = await fetch("your_backend_url_here", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch email and password");
+      }
+
+      const { email, password } = await response.json();
+      setEmail(email);
+      setPassword(password);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  const handleLogin = async () => {
+    const email = "rahulbhola2804@gmail.com";
+    const password = "123";
+    try {
+      const response = await makeUnauthenticatedPOSTRequest("/auth/login", {
+        email,
+        password,
+      });
+
+      if (response && !response.err) {
+        navigate("/welcome");
+      } else {
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
   };
 
   return (

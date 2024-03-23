@@ -1,5 +1,5 @@
 // Welcome.js
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineSearch } from "react-icons/md";
 import { FaHome, FaPlus, FaCarSide } from "react-icons/fa";
@@ -15,6 +15,7 @@ import "react-multi-carousel/lib/styles.css";
 import ContactForm from "./ContactForm";
 import { FaUserLarge } from "react-icons/fa6";
 import { useCookies } from "react-cookie";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 
 const Welcome = () => {
   const responsive = {
@@ -36,6 +37,9 @@ const Welcome = () => {
   };
   const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState("");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const dropdownRef = useRef(null);
 
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
@@ -58,14 +62,44 @@ const Welcome = () => {
     <div className="w-[100%]">
       <div>
         <div>
-          <div className="bg-emerald-600 flex justify-between items-center px-4 py-2">
-            <FaUserLarge className="bg-emerald-700 text-gray-300 p-1 rounded-full  h-10 w-9" />
-            <p
-              className="bg-emerald-700 rounded-full text-gray-300 px-2 hover:cursor-pointer hover:bg-emerald-800"
-              onClick={handleLogout}
-            >
-              LogOut
-            </p>
+          <div className=" p-4 absolute">
+            <div ref={dropdownRef}>
+              <FaUserLarge
+                className="bg-emerald-700 text-gray-300 p-1 rounded-full h-10 w-9"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+              />
+              {dropdownOpen && (
+                <div className="flex flex-col bg-emerald-700 mt-3">
+                  <Dropdown.Item
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    onClick={() => navigate("/profile")}
+                  >
+                    Profile
+                  </Dropdown.Item>
+
+                  <Dropdown.Item
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    onClick={() => navigate("/profile")}
+                  >
+                    Appointments
+                  </Dropdown.Item>
+
+                  <Dropdown.Item
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    onClick={() => navigate("/contact")}
+                  >
+                    Contact Us
+                  </Dropdown.Item>
+
+                  <Dropdown.Item
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </Dropdown.Item>
+                </div>
+              )}
+            </div>
           </div>
           <div className="bg-emerald-600 h-[220px] flex flex-col rounded-bl-3xl rounded-br-3xl justify-center items-center">
             <div className="mt-[59px] ">
@@ -253,10 +287,6 @@ const Welcome = () => {
             <span className="text-red-600 font-semibold">AB+ A+ O+ AB</span>-
           </p>
         </div>
-      </div>
-      {/* Contact */}
-      <div>
-        <ContactForm />
       </div>
     </div>
   );

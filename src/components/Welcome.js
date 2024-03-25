@@ -65,34 +65,34 @@ const Welcome = () => {
           <div className=" p-4 absolute">
             <div ref={dropdownRef}>
               <FaUserLarge
-                className="bg-emerald-700 text-gray-300 p-1 rounded-full h-10 w-9"
+                className="bg-gray-700 text-gray-300 p-1 rounded-full h-10 w-9"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               />
               {dropdownOpen && (
-                <div className="flex flex-col bg-emerald-700 mt-3">
+                <div className="flex flex-col bg-gray-700 mt-3">
                   <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
                     onClick={() => navigate("/profile")}
                   >
                     Profile
                   </Dropdown.Item>
 
                   <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
                     onClick={() => navigate("/profile")}
                   >
                     Appointments
                   </Dropdown.Item>
 
                   <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
                     onClick={() => navigate("/contact")}
                   >
                     Contact Us
                   </Dropdown.Item>
 
                   <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-emerald-800"
+                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
                     onClick={handleLogout}
                   >
                     Logout
@@ -101,13 +101,13 @@ const Welcome = () => {
               )}
             </div>
           </div>
-          <div className="bg-emerald-600 h-[220px] flex flex-col rounded-bl-3xl rounded-br-3xl justify-center items-center">
+          <div className="bg-sky-900 h-[220px] flex flex-col rounded-bl-3xl rounded-br-3xl justify-center items-center">
             <div className="mt-[59px] ">
               <h2 className="ml-8 text-2xl font-bold text-white">
                 Find Doctor For ??
               </h2>
               {/* Search Bar */}
-              <form className="bg-emerald-600" onSubmit={handleSearchSubmit}>
+              <form className="bg-sky-900" onSubmit={handleSearchSubmit}>
                 <input
                   className="border-2 rounded-full border-blue-400 shadow-md shadow-gray-800 h-[47px] m-2 mt-3 p-2 w-[300px]"
                   type="text"
@@ -161,7 +161,7 @@ const Welcome = () => {
               dotListClass="custom-dot-list-style"
               // itemClass="carousel-item-width-1000-px"
             >
-              <div className="bg-emerald-200 flex p-2 justify-evenly h-35">
+              <div className="bg-sky-200 flex p-2 justify-evenly h-35">
                 <img
                   className="h-20 w-20 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtW0o_Sr62KBhzXkgtyTyobTfHYQvX_4AQMQ&usqp=CAU"
@@ -174,7 +174,7 @@ const Welcome = () => {
                   <p>rating - ⭐⭐⭐⭐</p>
                 </div>
               </div>
-              <div className="bg-emerald-200 flex p-2 justify-evenly h-29">
+              <div className="bg-sky-200 flex p-2 justify-evenly h-29">
                 <img
                   className="h-20 w-20 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZeEzeqSeG5MwgQd6_tq3q66w-XrYcZ8lZZA&usqp=CAU"
@@ -187,7 +187,7 @@ const Welcome = () => {
                   <p>rating - ⭐⭐⭐⭐</p>
                 </div>
               </div>
-              <div className="bg-emerald-200 flex p-2 justify-evenly h-29">
+              <div className="bg-sky-200 flex p-2 justify-evenly h-29">
                 <img
                   className="h-20 w-20 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtb060DQUEdqZ1susfsrFDR4rs0dg5l6dclg7FYmNCrCngJHC9Wqhigxb8l1ygZsiegd0&usqp=CAU"
@@ -200,7 +200,7 @@ const Welcome = () => {
                   <p>rating - ⭐⭐⭐⭐</p>
                 </div>
               </div>
-              <div className="bg-emerald-200 flex p-2 justify-evenly h-29">
+              <div className="bg-sky-200 flex p-2 justify-evenly h-29">
                 <img
                   className="h-20 w-20 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl8tojHt_DQmb2VipaBxG7XfxZGent0PCaxg&usqp=CAU"
@@ -217,9 +217,8 @@ const Welcome = () => {
             ;
           </div>
 
-          {/* Body Part Links */}
           <p className="text-2xl text-gray-500 ml-4 mt-2">Categories</p>
-          <div className="flex flex-wrap m-3">
+          <div className="flex flex-wrap m-1 p-2 text-white bg-sky-900">
             <Link
               className="shadow-sm shadow-gray-400 p-2 px-6 m-3 flex"
               to="/body/skin"
@@ -228,14 +227,14 @@ const Welcome = () => {
               Skin
             </Link>
             <Link
-              className=" p-2 px-4 m-3 shadow-sm shadow-gray-400 flex"
+              className=" p-2 px-2 py-5 m- shadow-sm shadow-gray-400 flex"
               to="/body/Dental"
             >
               <FaPlus className="m-1 text-red-400 h-6 w-7" />
               Dental
             </Link>
             <Link
-              className=" p-2 px-4 m-3 shadow-sm shadow-gray-400 flex"
+              className=" p-2 px-5 m-3 shadow-sm shadow-gray-400 flex"
               to="/body/eye"
             >
               <FaRegEye className="m-1 h-6 text-red-400 w-7" />
@@ -249,14 +248,14 @@ const Welcome = () => {
               Heart
             </Link>
             <Link
-              className=" p-2 px-4 m-3 shadow-sm shadow-gray-400 flex"
+              className=" p-2 px-3 m-3 shadow-sm shadow-gray-400 flex"
               to="/body/kidney"
             >
               <GiKidneys className="m-1 text-red-400 h-6 w-7" />
               Kidney
             </Link>
             <Link
-              className=" p-2 px-4 m-3 shadow-sm shadow-gray-400 flex"
+              className=" p-2 px-4 m-1  shadow-sm shadow-gray-400 flex"
               to="/body/lungs"
             >
               <BsFillLungsFill className="m-1 text-red-400 h-6 w-7" />
@@ -274,7 +273,7 @@ const Welcome = () => {
       </div>
 
       {/* Blood bank */}
-      <div className="mt-4 flex justify-evenly bg-rose-100 p-4 w-full">
+      <div className="mt-4 flex justify-evenly bg-sky-200 p-4 w-full">
         <img
           className="h-10 mt-2 w-12 bg-pink-200 rounded-full"
           src="https://oneblood.scene7.com/is/image/oneblood/About-blood-drop?ts=1701100554337&$BRBangle$&dpr=off"
@@ -287,6 +286,21 @@ const Welcome = () => {
             <span className="text-red-600 font-semibold">AB+ A+ O+ AB</span>-
           </p>
         </div>
+      </div>
+      <div className="bg-sky-900 text-white mt-4 pt-12 w-full h-[150px] flex justify-around">
+        <div className="flex flex-col">
+          <p className="m-1">Door-stop</p>
+          <p className="m-1">Emergency</p>
+          <p className="m-1">All Categories</p>
+        </div>
+        <div className="flex flex-col">
+          <p className="m-1">Specialist</p>
+          <p className="m-1">Doctors</p>
+          <p className="m-1">Blood bank</p>
+        </div>
+      </div>
+      <div className="bg-sky-900 text-white mt-1 pt-6">
+        <p className="ml-24 pb-3">Copyright © 2024 Capstone Team</p>
       </div>
     </div>
   );

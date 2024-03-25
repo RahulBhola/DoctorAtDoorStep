@@ -32,7 +32,7 @@ function UserLogin() {
   return (
     <div>
       <div>
-        <div className="flex flex-col  items-center p-6 h-[650px] bg-emerald-600/80 rounded-tr-full rounded-tl-3xl">
+        <div className="flex flex-col  items-center p-6 h-[650px] bg-sky-700 rounded-tr-full rounded-tl-3xl">
           <img
             className="rounded-full shadow-md shadow-gray-700"
             style={{ height: 180, width: 170, marginBottom: 30 }}
@@ -57,7 +57,7 @@ function UserLogin() {
           />
           <div className=" w-full flex items-center justify-center my-8">
             <button
-              className="bg-emerald-600/80 hover:bg-emerald-100 font-semibold p-3 px-20 rounded-full"
+              className="bg-sky-900 text-white hover:bg-emerald-100 font-semibold p-3 px-20 rounded-full"
               onClick={(e) => {
                 e.preventDefault();
                 login();
@@ -74,13 +74,13 @@ function UserLogin() {
           </div>
           <Link
             to="/signin"
-            className=" bg-emerald-600/80 hover:bg-emerald-100 w-full flex items-center justify-center py-4 rounded-full font-bold"
+            className=" bg-sky-900 text-white hover:bg-emerald-100 w-full flex items-center justify-center py-4 rounded-full font-bold"
           >
             SIGN UP FOR SPOTIFY
           </Link>
         </div>
 
-        <div className="bg-emerald-600/80 w-full h-[150px] flex justify-around py-10">
+        <div className="bg-sky-700 w-full h-[150px] flex justify-around py-10">
           <div className="flex flex-col">
             <p className="m-1">Door-stop</p>
             <p className="m-1">Emergency</p>
@@ -92,7 +92,7 @@ function UserLogin() {
             <p className="m-1">Blood bank</p>
           </div>
         </div>
-        <div className="bg-emerald-600/80 pt-7">
+        <div className="bg-sky-700 pt-7">
           <p className="ml-20 pb-3">Copyright © 2024 Capstone Team</p>
         </div>
       </div>

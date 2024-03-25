@@ -17,7 +17,7 @@ const StarterPage = () => {
 
   const fetchEmailAndPassword = async () => {
     try {
-      const response = await fetch("your_backend_url_here", {
+      const response = await fetch("http://localhost:3000", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -36,10 +36,10 @@ const StarterPage = () => {
     }
   };
   const handleLogin = async () => {
-    const email = "rahulbhola2804@gmail.com";
-    const password = "123";
+    // const email = "rahulbhola2804@gmil.com";
+    // const password = "123";
     try {
-      const response = await makeUnauthenticatedPOSTRequest("/auth/login", {
+      const response = await fetchEmailAndPassword("/auth/login", {
         email,
         password,
       });
@@ -56,20 +56,20 @@ const StarterPage = () => {
 
   return (
     <div className="bg-gray-200 h-[100%]">
-      <div className="bg-emerald-600 flex justify-between items-center px-4 py-2">
+      <div className="bg-sky-700 flex justify-between items-center px-4 py-2">
         <FaPlusCircle className="text-red-700 h-10 w-9" />
         <div className="flex">
           <p
-            className="bg-emerald-700 rounded-full text-gray-300 px-2 hover:cursor-pointer hover:bg-emerald-800"
+            className="bg-sky-900 rounded-full text-gray-300 px-2"
             onClick={() => {
               navigate("/signin");
             }}
           >
             SignIn
           </p>
-          <p className="text-xl">/</p>
+          <p className="text-xl text-white">/</p>
           <p
-            className="bg-emerald-700 rounded-full text-gray-300 px-2 hover:cursor-pointer hover:bg-emerald-800"
+            className="bg-sky-900 rounded-full text-gray-300 px-2"
             onClick={() => {
               navigate("/login");
             }}
@@ -79,7 +79,7 @@ const StarterPage = () => {
         </div>
       </div>
 
-      <div className="bg-emerald-600 h-[560px] rounded-bl-full flex p-4  justify-center items-center">
+      <div className="bg-sky-700 h-[560px] rounded-bl-full flex p-4  justify-center items-center">
         <img
           className="ml-4"
           style={{ height: 300, width: 400 }}
@@ -88,14 +88,14 @@ const StarterPage = () => {
         />
       </div>
       <div className="flex flex-col justify-center items-center w-full h-[100px]">
-        <p className="text-3xl font-bold text-gray-700" l>
+        <p className="text-3xl font-bold text-gray-700">
           How Do You Feel Today
         </p>
         <p className="m-10 w-2/3  font-semibold text-gray-700">
           Choose the Desire Doctor According to the problem to your Doorstop
         </p>
         <button
-          className="flex justify-center items-center w-2/3 bg-emerald-700 px-2 p-2 rounded-full font-bold text-gray-300  "
+          className="flex justify-center items-center w-2/3 bg-sky-900 p-2 rounded-full font-bold text-gray-100  "
           onClick={handleLogin}
         >
           Get Started

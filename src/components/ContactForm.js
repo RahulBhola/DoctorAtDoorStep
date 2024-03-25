@@ -25,7 +25,7 @@ const ContactForm = () => {
 
   return (
     <div>
-      <div className="flex flex-col mt-[60px]  items-center p-6 h-[650px] bg-emerald-600/80 rounded-tr-full rounded-tl-3xl">
+      <div className="flex flex-col mt-[60px]  items-center p-6 h-[650px] bg-sky-800/80 rounded-tr-full rounded-tl-3xl">
         <img
           className="rounded-full shadow-md shadow-gray-700"
           style={{ height: 180, width: 170, marginBottom: 30 }}
@@ -99,7 +99,7 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
-      <div className="bg-emerald-600/80 w-full  h-[200px]">
+      <div className="bg-sky-800/80 w-full  h-[200px]">
         <div className="flex justify-around">
           <div>
             <p className="m-1">Door-stop</p>

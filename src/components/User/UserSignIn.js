@@ -43,7 +43,7 @@ function UserSignIn() {
 
   return (
     <div>
-      <div className="flex flex-col items-center p-6 h-900 bg-emerald-600/80 rounded-tr-full rounded-tl-3xl w-full">
+      <div className="flex flex-col items-center p-6 h-900 bg-sky-700 rounded-tr-full rounded-tl-3xl w-full">
         <img
           className="rounded-full shadow-md shadow-gray-700 mb-6"
           style={{ height: 180, width: 200 }}
@@ -96,7 +96,7 @@ function UserSignIn() {
         />
         <div className="flex justify-center my-8">
           <button
-            className="bg-emerald-600/80  hover:bg-emerald-100 font-semibold p-3 px-20 rounded-full font-bold"
+            className="bg-sky-900 text-white hover:bg-emerald-100 font-semibold p-3 px-20 rounded-full font-bold"
             onClick={(e) => {
               e.preventDefault();
               signUp();
@@ -112,12 +112,12 @@ function UserSignIn() {
         </div>
         <Link
           to="/login"
-          className="bg-emerald-600/80 hover:bg-emerald-100 w-full flex items-center justify-center py-4 rounded-full font-bold"
+          className="bg-sky-900 text-white hover:bg-emerald-100 w-full flex items-center justify-center py-4 rounded-full font-bold"
         >
           LOG IN INSTEAD
         </Link>
       </div>
-      <div className="bg-emerald-600/80 w-full h-[150px] flex justify-around">
+      <div className="bg-sky-700 w-full h-[150px] flex justify-around text-gray-300">
         <div className="flex flex-col">
           <p className="m-1">Door-stop</p>
           <p className="m-1">Emergency</p>
@@ -129,8 +129,10 @@ function UserSignIn() {
           <p className="m-1">Blood bank</p>
         </div>
       </div>
-      <div className="bg-emerald-600/80">
-        <p className="ml-20 pb-3">Copyright © 2024 Capstone Team</p>
+      <div className="bg-sky-700">
+        <p className="ml-20 pb-3 text-gray-300">
+          Copyright © 2024 Capstone Team
+        </p>
       </div>
     </div>
   );

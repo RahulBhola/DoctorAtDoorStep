@@ -4,54 +4,55 @@ import { useNavigate } from "react-router-dom";
 import img1 from "../assets/starterImg.png";
 import { FaPlusCircle } from "react-icons/fa";
 import { CiLocationArrow1 } from "react-icons/ci";
-import { makeUnauthenticatedPOSTRequest } from "../utils/serverHelpers";
+// import { makeUnauthenticatedPOSTRequest } from "../utils/serverHelpers";
 
 const StarterPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    fetchEmailAndPassword();
-  }, []);
+  // useEffect(() => {
+  //   fetchEmailAndPassword();
+  // }, []);
 
-  const fetchEmailAndPassword = async () => {
-    try {
-      const response = await fetch("http://localhost:3000", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+  // const fetchEmailAndPassword = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:3000", {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch email and password");
-      }
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch email and password");
+  //     }
 
-      const { email, password } = await response.json();
-      setEmail(email);
-      setPassword(password);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  //     const { email, password } = await response.json();
+  //     setEmail(email);
+  //     setPassword(password);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
   const handleLogin = async () => {
     // const email = "rahulbhola2804@gmil.com";
     // const password = "123";
-    try {
-      const response = await fetchEmailAndPassword("/auth/login", {
-        email,
-        password,
-      });
+    // try {
+    //   const response = await fetchEmailAndPassword("/auth/login", {
+    //     email,
+    //     password,
+    //   });
 
-      if (response && !response.err) {
-        navigate("/welcome");
-      } else {
-        navigate("/login");
-      }
-    } catch (error) {
-      console.error("Error occurred:", error);
-    }
+    //   if (response && !response.err) {
+    //     navigate("/welcome");
+    //   } else {
+    //     navigate("/login");
+    //   }
+    // } catch (error) {
+    //   console.error("Error occurred:", error);
+    // }
+    navigate("/login");
   };
 
   return (

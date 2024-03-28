@@ -22,6 +22,7 @@ function UserLogin() {
       const date = new Date();
       date.setDate(date.getDate() + 30);
       setCookie("token", token, { path: "/", expires: date });
+      window.localStorage.setItem("isLoggedIn", true);
       alert("Success");
       navigate("/welcome");
     } else {
@@ -76,7 +77,7 @@ function UserLogin() {
             to="/signin"
             className=" bg-sky-900 text-white hover:bg-emerald-100 w-full flex items-center justify-center py-4 rounded-full font-bold"
           >
-            SIGN UP FOR SPOTIFY
+            SIGN UP 
           </Link>
         </div>
 

@@ -24,17 +24,17 @@ import Dental2 from "./BookingComp/Dental2";
 import Skin1 from "./BookingComp/Skin1";
 import Skin2 from "./BookingComp/Skin2";
 import Lungs1 from "./BookingComp/Lungs1";
-import Liver1 from './BookingComp/Liver1';
-import Kidney1 from './BookingComp/Kidney1';
+import Liver1 from "./BookingComp/Liver1";
+import Kidney1 from "./BookingComp/Kidney1";
 
 const App = () => {
   const [cookie, setCookie] = useCookies(["token"]);
-
+  const loggedIn = window.localStorage.getItem("isLoggedIn");
   return (
     <BrowserRouter>
       {cookie.token ? (
         <Routes>
-          <Route path="/home" element={<StarterPage />} />
+          <Route path="/home" element={loggedIn? <Welcome/>:<StarterPage />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/body/skin" element={<Skin />} />
           <Route path="/body/Dental" element={<Dental />} />
@@ -54,8 +54,8 @@ const App = () => {
           <Route path="/BookingComp/Heart1" element={<Heart1 />} />
           <Route path="/BookingComp/Heart2" element={<Heart2 />} />
           <Route path="/BookingComp/Lungs1" element={<Lungs1 />} />
-          <Route path='/BookingComp/Liver1' element={<Liver1/>} />
-          <Route path='/BookingComp/Kideny1' element={<Kidney1/>} />
+          <Route path="/BookingComp/Liver1" element={<Liver1 />} />
+          <Route path="/BookingComp/Kideny1" element={<Kidney1 />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       ) : (
@@ -71,4 +71,3 @@ const App = () => {
 };
 
 export default App;
-

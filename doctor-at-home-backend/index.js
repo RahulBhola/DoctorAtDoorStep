@@ -30,7 +30,7 @@ mongoose
     console.log("Error connecting to MongoDB", err);
   });
 
-// set passport-jwt
+// set passport-jwt6
 let opts = {};
 
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();

@@ -2,20 +2,22 @@
 import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineSearch } from "react-icons/md";
-import { FaHome, FaPlus, FaCarSide } from "react-icons/fa";
-import { BiSolidDonateBlood } from "react-icons/bi";
-import { MdFace5 } from "react-icons/md";
-import { GiLiver } from "react-icons/gi";
-import { GiHeartOrgan } from "react-icons/gi";
-import { GiKidneys } from "react-icons/gi";
-import { BsFillLungsFill } from "react-icons/bs";
-import { FaRegEye } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ContactForm from "./ContactForm";
-import { FaUserLarge } from "react-icons/fa6";
 import { useCookies } from "react-cookie";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Dropdown} from "react-bootstrap";
+import skinImage from "../assets/skin.jpg";
+import dentalImage from "../assets/dental.jpg";
+import eyeImage from "../assets/eye.jpg";
+import heartImage from "../assets/heart.jpg";
+import kidneyImage from "../assets/kidney.jpeg";
+import liverImage from "../assets/liver.jpg";
+import lungsImage from "../assets/lungs.jpg";
+import ambulanceImage from "../assets/ambulance.jpg";
+import bloodImage from "../assets/blood.jpg";
+import emergencyImage from "../assets/emergency.jpg";
+import doorstepImage from "../assets/doorstep.png";
+import maleUserImage from "../assets/userImage.jpg";
 
 const Welcome = () => {
   const responsive = {
@@ -55,6 +57,7 @@ const Welcome = () => {
   const [, , removeCookie] = useCookies(["token"]);
   const handleLogout = (req, res) => {
     removeCookie("token");
+    window.localStorage.removeItem("isLoggedIn");
     navigate("/");
   };
 
@@ -64,8 +67,10 @@ const Welcome = () => {
         <div>
           <div className=" p-4 absolute">
             <div ref={dropdownRef}>
-              <FaUserLarge
-                className="bg-gray-700 text-gray-300 p-1 rounded-full h-10 w-9"
+              <img
+                src={maleUserImage}
+                alt="User"
+                className="p-1 rounded-full w-12"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               />
               {dropdownOpen && (
@@ -102,47 +107,72 @@ const Welcome = () => {
             </div>
           </div>
           <div className="bg-sky-900 h-[220px] flex flex-col rounded-bl-3xl rounded-br-3xl justify-center items-center">
-            <div className="mt-[59px] ">
-              <h2 className="ml-8 text-2xl font-bold text-white">
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold text-white">
                 Find Doctor For ??
               </h2>
               {/* Search Bar */}
-              <form className="bg-sky-900" onSubmit={handleSearchSubmit}>
+              <form
+                onSubmit={handleSearchSubmit}
+                className="flex items-center mt-4"
+              >
                 <input
-                  className="border-2 rounded-full border-blue-400 shadow-md shadow-gray-800 h-[47px] m-2 mt-3 p-2 w-[300px]"
+                  className="border-2 rounded-l-full border-blue-400 shadow-md shadow-gray-800 h-12 px-4 w-[300px]"
                   type="text"
                   placeholder="Search body parts..."
                   value={searchInput}
                   onChange={handleSearchInputChange}
                 />
-                <button type="submit">
-                  <MdOutlineSearch className="text-3xl text-white pt-2" />
+                <button
+                  type="submit"
+                  className="bg-blue-400 rounded-r-full mx-1 p-2 flex items-center justify-center"
+                >
+                  <MdOutlineSearch className="text-3xl text-white" />
                 </button>
               </form>
             </div>
           </div>
-          <p className="mt-6 text-2xl ml-3 text-gray-500">Services</p>
+
+          <p className="mt-6 text-2xl ml-3 text-gray-500 font-bold">Services</p>
           <div className="flex justify-evenly items-center mt-4">
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <FaHome className="text-2xl text-gray-500" />
+              <img
+                src={doorstepImage}
+                alt="Skin"
+                className="h-28 w-28 rounded-xl object-cover"
+              />
               <p>Doorstop</p>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <FaPlus className="text-2xl text-red-400" />
+              <img
+                src={emergencyImage}
+                alt="Skin"
+                className="h-28 w-28 rounded-xl object-cover"
+              />
               <p>Emergancy</p>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <BiSolidDonateBlood className="text-2xl text-rose-500" />
+              <img
+                src={bloodImage}
+                alt="Skin"
+                className="h-28 w-28 rounded-xl object-cover"
+              />
               <p>Blood</p>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <FaCarSide className="text-2xl text-sky-300" />
+              <img
+                src={ambulanceImage}
+                alt="Skin"
+                className="h-28 w-28 rounded-xl object-cover"
+              />
               <p>Ambulance</p>
             </div>
           </div>
 
           <div className="w-[100%] mt-2">
-            <p className="ml-3 text-2xl text-gray-400 mb-3">Recently Added</p>
+            <p className="ml-3 text-2xl text-gray-400 font-bold">
+              Recently Added
+            </p>
             <Carousel
               swipeable={false}
               draggable={false}
@@ -161,119 +191,151 @@ const Welcome = () => {
               dotListClass="custom-dot-list-style"
               // itemClass="carousel-item-width-1000-px"
             >
-              <div className="bg-sky-200 flex p-2 justify-evenly h-35">
+              <div className="bg-sky-200 flex p-2 h-40 m-4 mb-6 rounded-xl">
+                <div className="p-6">
+                  <p className="font-bold text-2xl text-gray-700">
+                    Dr.Aman (Eye specialist)
+                  </p>
+                  <p>Rating - ⭐⭐⭐⭐</p>
+                </div>
                 <img
-                  className="h-20 w-20 rounded-full"
+                  className="h-30 w-40 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtW0o_Sr62KBhzXkgtyTyobTfHYQvX_4AQMQ&usqp=CAU"
                   alt="/"
                 />
-                <div>
-                  <p className="font-bold text-2xl text-gray-700">
-                    Dr.Aman(Eye specialist)
-                  </p>
-                  <p>rating - ⭐⭐⭐⭐</p>
-                </div>
               </div>
-              <div className="bg-sky-200 flex p-2 justify-evenly h-29">
+              <div className="bg-sky-200 flex p-2 h-40 m-4 rounded-xl">
+                <div className="p-6">
+                  <p className="font-bold text-2xl text-gray-700">
+                    Dr.Priti (Heart specialist)
+                  </p>
+                  <p>Rating - ⭐⭐⭐⭐</p>
+                </div>
                 <img
-                  className="h-20 w-20 rounded-full"
+                  className="h-30 w-40 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZeEzeqSeG5MwgQd6_tq3q66w-XrYcZ8lZZA&usqp=CAU"
                   alt="/"
                 />
-                <div>
-                  <p className="font-bold text-2xl text-gray-700">
-                    Dr.Priti(Heart specialist)
-                  </p>
-                  <p>rating - ⭐⭐⭐⭐</p>
-                </div>
               </div>
-              <div className="bg-sky-200 flex p-2 justify-evenly h-29">
+              <div className="bg-sky-200 flex p-2 h-40 m-4 rounded-xl">
+                <div className="p-6">
+                  <p className="font-bold text-2xl text-gray-700">
+                    Dr.Roy (Eye specialist)
+                  </p>
+                  <p>Rating - ⭐⭐⭐⭐</p>
+                </div>
                 <img
-                  className="h-20 w-20 rounded-full"
+                  className="h-30 w-40 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtb060DQUEdqZ1susfsrFDR4rs0dg5l6dclg7FYmNCrCngJHC9Wqhigxb8l1ygZsiegd0&usqp=CAU"
                   alt="/"
                 />
-                <div>
-                  <p className="font-bold text-2xl text-gray-700">
-                    Dr.Roy(Eye specialist)
-                  </p>
-                  <p>rating - ⭐⭐⭐⭐</p>
-                </div>
               </div>
-              <div className="bg-sky-200 flex p-2 justify-evenly h-29">
+              <div className="bg-sky-200 flex p-2 h-40 m-4 rounded-xl">
+                <div className="p-6">
+                  <p className="font-bold text-2xl text-gray-700">
+                    Dr.Salini (Skin specialist)
+                  </p>
+                  <p>Rating - ⭐⭐⭐⭐</p>
+                </div>
                 <img
-                  className="h-20 w-20 rounded-full"
+                  className="h-30 w-40 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl8tojHt_DQmb2VipaBxG7XfxZGent0PCaxg&usqp=CAU"
                   alt="/"
                 />
-                <div>
-                  <p className="font-bold text-2xl text-gray-700">
-                    Dr.Salini(Skin specialist)
-                  </p>
-                  <p>rating - ⭐⭐⭐⭐</p>
-                </div>
               </div>
             </Carousel>
-            ;
           </div>
 
-          <p className="text-2xl text-gray-500 ml-4 mt-2">Categories</p>
-          <div className="flex flex-wrap m-1 p-2 text-white bg-sky-900">
+          <p className="text-2xl text-gray-500 ml-4 m-2 font-bold">
+            Categories
+          </p>
+          <div className="flex flex-wrap justify-around text-sky-800 font-bold p-2 bg-sky-800 rounded-3xl">
             <Link
-              className="shadow-sm shadow-gray-400 p-2 px-6 m-3 flex"
+              className="bg-sky-200 rounded-xl my-3 flex flex-col items-center mt-4"
               to="/body/skin"
             >
-              <MdFace5 className="m-1 text-red-400 h-6 w-7" />
-              Skin
+              <img
+                src={skinImage}
+                alt="Skin"
+                className="h-32 w-32 rounded-xl object-cover"
+              />
+              <p className="text-center">Skin</p>
             </Link>
+
             <Link
-              className=" p-2 px-2 py-5 m- shadow-sm shadow-gray-400 flex"
+              className="bg-sky-200 rounded-xl my-3 flex flex-col items-center mt-4"
               to="/body/Dental"
             >
-              <FaPlus className="m-1 text-red-400 h-6 w-7" />
-              Dental
+              <img
+                src={dentalImage}
+                alt="Dental"
+                className="h-32 w-32 rounded-xl object-cover"
+              />
+              <p className="text-center">Dental</p>
             </Link>
+
             <Link
-              className=" p-2 px-5 m-3 shadow-sm shadow-gray-400 flex"
+              className="bg-sky-200 rounded-xl my-3 flex flex-col items-center mt-4"
               to="/body/eye"
             >
-              <FaRegEye className="m-1 h-6 text-red-400 w-7" />
-              Eye
+              <img
+                src={eyeImage}
+                alt="Eye"
+                className="h-32 w-32 rounded-xl object-cover"
+              />
+              <p className="text-center">Eye</p>
             </Link>
+
             <Link
-              className=" p-2 px-4 m-3 shadow-sm shadow-gray-400 flex"
+              className="bg-sky-200 rounded-xl mb-3 flex flex-col items-center"
               to="/body/heart"
             >
-              <GiHeartOrgan className="m-1 text-red-400 h-6 w-7" />
-              Heart
+              <img
+                src={heartImage}
+                alt="Heart"
+                className="h-28 w-32 rounded-xl object-cover"
+              />
+              <p className="text-center">Heart</p>
             </Link>
             <Link
-              className=" p-2 px-3 m-3 shadow-sm shadow-gray-400 flex"
+              className="bg-sky-200 rounded-xl mb-3 flex flex-col items-center"
               to="/body/kidney"
             >
-              <GiKidneys className="m-1 text-red-400 h-6 w-7" />
-              Kidney
+              <img
+                src={kidneyImage}
+                alt="Kidney"
+                className="h-28 w-32 rounded-xl object-cover"
+              />
+              <p className="text-center">Kidney</p>
             </Link>
             <Link
-              className=" p-2 px-4 m-1  shadow-sm shadow-gray-400 flex"
+              className="bg-sky-200 rounded-xl mb-3 flex flex-col items-center"
               to="/body/lungs"
             >
-              <BsFillLungsFill className="m-1 text-red-400 h-6 w-7" />
-              Lungs
+              <img
+                src={lungsImage}
+                alt="Lungs"
+                className="h-28 w-32 rounded-xl object-cover"
+              />
+              <p className="text-center">Lungs</p>
             </Link>
             <Link
-              className=" p-2 px-4 m-3 shadow-sm shadow-gray-400 flex"
+              className="bg-sky-200 rounded-xl mb-3 flex flex-col items-center"
               to="/body/liver"
             >
-              <GiLiver className="m-1 h-6 w-7 text-red-400" />
-              Liver
+              <img
+                src={liverImage}
+                alt="Liver"
+                className="h-28 w-32 rounded-xl object-cover"
+              />
+              <p className="text-center">Liver</p>
             </Link>
           </div>
         </div>
       </div>
 
       {/* Blood bank */}
-      <div className="mt-4 flex justify-evenly bg-sky-200 p-4 w-full">
+      <div className="mt-4 mb-28 flex justify-evenly bg-sky-200 p-4 w-full">
         <img
           className="h-10 mt-2 w-12 bg-pink-200 rounded-full"
           src="https://oneblood.scene7.com/is/image/oneblood/About-blood-drop?ts=1701100554337&$BRBangle$&dpr=off"
@@ -286,21 +348,6 @@ const Welcome = () => {
             <span className="text-red-600 font-semibold">AB+ A+ O+ AB</span>-
           </p>
         </div>
-      </div>
-      <div className="bg-sky-900 text-white mt-4 pt-12 w-full h-[150px] flex justify-around">
-        <div className="flex flex-col">
-          <p className="m-1">Door-stop</p>
-          <p className="m-1">Emergency</p>
-          <p className="m-1">All Categories</p>
-        </div>
-        <div className="flex flex-col">
-          <p className="m-1">Specialist</p>
-          <p className="m-1">Doctors</p>
-          <p className="m-1">Blood bank</p>
-        </div>
-      </div>
-      <div className="bg-sky-900 text-white mt-1 pt-6">
-        <p className="ml-24 pb-3">Copyright © 2024 Capstone Team</p>
       </div>
     </div>
   );

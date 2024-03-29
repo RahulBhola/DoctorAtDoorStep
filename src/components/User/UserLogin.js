@@ -22,7 +22,7 @@ function UserLogin() {
       const date = new Date();
       date.setDate(date.getDate() + 30);
       setCookie("token", token, { path: "/", expires: date });
-      window.localStorage.setItem("isLoggedIn", true);
+      setCookie("isLoggedIn", true, {path: "/" , expires: date});
       alert("Success");
       navigate("/welcome");
     } else {

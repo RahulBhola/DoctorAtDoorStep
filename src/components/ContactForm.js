@@ -99,21 +99,6 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
-      <div className="bg-sky-800/80 w-full  h-[200px]">
-        <div className="flex justify-around">
-          <div>
-            <p className="m-1">Door-stop</p>
-            <p className="m-1">Emergency</p>
-            <p className="m-1">All Categories</p>
-          </div>
-          <div>
-            <p className="m-1">Specialist</p>
-            <p className="m-1">Doctors</p>
-            <p className="m-1">Blood bank</p>
-          </div>
-        </div>
-        <p className="ml-20 mt-3">copyright@2024 capstone team</p>
-      </div>
     </div>
   );
 };

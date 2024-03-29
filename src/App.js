@@ -26,38 +26,52 @@ import Skin2 from "./BookingComp/Skin2";
 import Lungs1 from "./BookingComp/Lungs1";
 import Liver1 from "./BookingComp/Liver1";
 import Kidney1 from "./BookingComp/Kidney1";
+import Whatsapp from "./components/footer/FixedFooter";
+import Packages from "./components/footer/Packages";
+import Labtest from "./components/footer/Labtest";
+import Consult from "./components/footer/Consult";
 
 const App = () => {
-  const [cookie, setCookie] = useCookies(["token"]);
-  const loggedIn = window.localStorage.getItem("isLoggedIn");
+  const [cookie] = useCookies(["token"]);
+  const loggedIn = useCookies(["isLoggedIn"]);
   return (
     <BrowserRouter>
       {cookie.token ? (
-        <Routes>
-          <Route path="/home" element={loggedIn? <Welcome/>:<StarterPage />} />
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/body/skin" element={<Skin />} />
-          <Route path="/body/Dental" element={<Dental />} />
-          <Route path="/body/eye" element={<Eye />} />
-          <Route path="/body/heart" element={<Heart />} />
-          <Route path="/body/kidney" element={<Kidney />} />
-          <Route path="/body/lungs" element={<Lungs />} />
-          <Route path="/body/liver" element={<Liver />} />
-          <Route path="/contact" element={<ContactForm />} />
-          <Route path="/BookingComp/Skin1" element={<Skin1 />} />
-          <Route path="/BookingComp/Skin2" element={<Skin2 />} />
-          <Route path="/BookingComp/Dental1" element={<Dental1 />} />
-          <Route path="/BookingComp/Dental2" element={<Dental2 />} />
-          <Route path="/BookingComp/Eye1" element={<Eye1 />} />
-          <Route path="/BookingComp/Eye2" element={<Eye2 />} />
-          <Route path="/BookingComp/Eye3" element={<Eye3 />} />
-          <Route path="/BookingComp/Heart1" element={<Heart1 />} />
-          <Route path="/BookingComp/Heart2" element={<Heart2 />} />
-          <Route path="/BookingComp/Lungs1" element={<Lungs1 />} />
-          <Route path="/BookingComp/Liver1" element={<Liver1 />} />
-          <Route path="/BookingComp/Kideny1" element={<Kidney1 />} />
-          <Route path="*" element={<Navigate to="/home" />} />
-        </Routes>
+        <>
+          <Routes>
+            <Route
+              path="/home"
+              element={loggedIn ? <Welcome /> : <StarterPage />}
+            />
+            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/body/skin" element={<Skin />} />
+            <Route path="/body/Dental" element={<Dental />} />
+            <Route path="/body/eye" element={<Eye />} />
+            <Route path="/body/heart" element={<Heart />} />
+            <Route path="/body/kidney" element={<Kidney />} />
+            <Route path="/body/lungs" element={<Lungs />} />
+            <Route path="/body/liver" element={<Liver />} />
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/BookingComp/Skin1" element={<Skin1 />} />
+            <Route path="/BookingComp/Skin2" element={<Skin2 />} />
+            <Route path="/BookingComp/Dental1" element={<Dental1 />} />
+            <Route path="/BookingComp/Dental2" element={<Dental2 />} />
+            <Route path="/BookingComp/Eye1" element={<Eye1 />} />
+            <Route path="/BookingComp/Eye2" element={<Eye2 />} />
+            <Route path="/BookingComp/Eye3" element={<Eye3 />} />
+            <Route path="/BookingComp/Heart1" element={<Heart1 />} />
+            <Route path="/BookingComp/Heart2" element={<Heart2 />} />
+            <Route path="/BookingComp/Lungs1" element={<Lungs1 />} />
+            <Route path="/BookingComp/Liver1" element={<Liver1 />} />
+            <Route path="/BookingComp/Kideny1" element={<Kidney1 />} />
+            <Route path="/whatapp" element={<Whatsapp />} />
+            <Route path="/packages" element={<Packages />} />
+            <Route path="/labtest" element={<Labtest />} />
+            <Route path="/consult" element={<Consult />} />
+            <Route path="*" element={<Navigate to="/welcome" />} />
+          </Routes>
+          <Whatsapp />
+        </>
       ) : (
         <Routes>
           <Route path="/" element={<StarterPage />} />

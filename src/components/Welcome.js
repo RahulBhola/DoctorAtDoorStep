@@ -5,7 +5,7 @@ import { MdOutlineSearch } from "react-icons/md";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useCookies } from "react-cookie";
-import { Dropdown} from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import skinImage from "../assets/skin.jpg";
 import dentalImage from "../assets/dental.jpg";
 import eyeImage from "../assets/eye.jpg";
@@ -18,6 +18,7 @@ import bloodImage from "../assets/blood.jpg";
 import emergencyImage from "../assets/emergency.jpg";
 import doorstepImage from "../assets/doorstep.png";
 import maleUserImage from "../assets/userImage.jpg";
+import Whatsapp from "./footer/FixedFooter";
 
 const Welcome = () => {
   const responsive = {
@@ -57,7 +58,7 @@ const Welcome = () => {
   const [, , removeCookie] = useCookies(["token"]);
   const handleLogout = (req, res) => {
     removeCookie("token");
-    window.localStorage.removeItem("isLoggedIn");
+    removeCookie("isLoggedIn");
     navigate("/");
   };
 

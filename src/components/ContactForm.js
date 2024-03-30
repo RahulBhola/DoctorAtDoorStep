@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "./footer/FixedFooter";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -99,6 +100,7 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
+      <Navbar />
     </div>
   );
 };

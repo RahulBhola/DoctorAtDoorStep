@@ -26,14 +26,19 @@ import Skin2 from "./BookingComp/Skin2";
 import Lungs1 from "./BookingComp/Lungs1";
 import Liver1 from "./BookingComp/Liver1";
 import Kidney1 from "./BookingComp/Kidney1";
-import Whatsapp from "./components/footer/FixedFooter";
+import Navbar from "./components/footer/FixedFooter";
 import Packages from "./components/footer/Packages";
 import Labtest from "./components/footer/Labtest";
 import Consult from "./components/footer/Consult";
+import Emergancy from "./components/services/Emergancy";
+import Blood from "./components/services/Blood";
+import RequireBlood from "./components/services/RequireBlood";
+import DonateBlood from "./components/services/DonateBlood";
 
 const App = () => {
   const [cookie] = useCookies(["token"]);
   const loggedIn = useCookies(["isLoggedIn"]);
+
   return (
     <BrowserRouter>
       {cookie.token ? (
@@ -64,13 +69,17 @@ const App = () => {
             <Route path="/BookingComp/Lungs1" element={<Lungs1 />} />
             <Route path="/BookingComp/Liver1" element={<Liver1 />} />
             <Route path="/BookingComp/Kideny1" element={<Kidney1 />} />
-            <Route path="/whatapp" element={<Whatsapp />} />
+            <Route path="/navbar" element={<Navbar />} />
             <Route path="/packages" element={<Packages />} />
             <Route path="/labtest" element={<Labtest />} />
             <Route path="/consult" element={<Consult />} />
+            <Route path="/body/Emergancy" element={<Emergancy />} />
+            <Route path="/body/blood" element={<Blood />} />
+            <Route path="/body/blood/donate" element={<DonateBlood />} />
+            <Route path="/body/blood/require" element={<RequireBlood />} />
+
             <Route path="*" element={<Navigate to="/welcome" />} />
           </Routes>
-          <Whatsapp />
         </>
       ) : (
         <Routes>

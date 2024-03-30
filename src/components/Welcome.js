@@ -1,11 +1,8 @@
 // Welcome.js
-import React, { useState, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { MdOutlineSearch } from "react-icons/md";
+import React from "react";
+import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useCookies } from "react-cookie";
-import { Dropdown } from "react-bootstrap";
 import skinImage from "../assets/skin.jpg";
 import dentalImage from "../assets/dental.jpg";
 import eyeImage from "../assets/eye.jpg";
@@ -17,8 +14,8 @@ import ambulanceImage from "../assets/ambulance.jpg";
 import bloodImage from "../assets/blood.jpg";
 import emergencyImage from "../assets/emergency.jpg";
 import doorstepImage from "../assets/doorstep.png";
-import maleUserImage from "../assets/userImage.jpg";
-import Whatsapp from "./footer/FixedFooter";
+import Navbar from "./footer/FixedFooter";
+import Header from "./header/Header";
 
 const Welcome = () => {
   const responsive = {
@@ -38,132 +35,46 @@ const Welcome = () => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
-  const navigate = useNavigate();
-  const [searchInput, setSearchInput] = useState("");
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const dropdownRef = useRef(null);
-
-  const handleSearchInputChange = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    // Use the search input to dynamically navigate to the corresponding body part component
-    if (searchInput.trim() !== "") {
-      navigate(`/body/${searchInput.toLowerCase()}`);
-    }
-  };
-  const [, , removeCookie] = useCookies(["token"]);
-  const handleLogout = (req, res) => {
-    removeCookie("token");
-    removeCookie("isLoggedIn");
-    navigate("/");
-  };
-
   return (
     <div className="w-[100%]">
       <div>
         <div>
-          <div className=" p-4 absolute">
-            <div ref={dropdownRef}>
-              <img
-                src={maleUserImage}
-                alt="User"
-                className="p-1 rounded-full w-12"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-              />
-              {dropdownOpen && (
-                <div className="flex flex-col bg-gray-700 mt-3">
-                  <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
-                    onClick={() => navigate("/profile")}
-                  >
-                    Profile
-                  </Dropdown.Item>
-
-                  <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
-                    onClick={() => navigate("/profile")}
-                  >
-                    Appointments
-                  </Dropdown.Item>
-
-                  <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
-                    onClick={() => navigate("/contact")}
-                  >
-                    Contact Us
-                  </Dropdown.Item>
-
-                  <Dropdown.Item
-                    className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </Dropdown.Item>
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="bg-sky-900 h-[220px] flex flex-col rounded-bl-3xl rounded-br-3xl justify-center items-center">
-            <div className="mt-8">
-              <h2 className="text-2xl font-bold text-white">
-                Find Doctor For ??
-              </h2>
-              {/* Search Bar */}
-              <form
-                onSubmit={handleSearchSubmit}
-                className="flex items-center mt-4"
-              >
-                <input
-                  className="border-2 rounded-l-full border-blue-400 shadow-md shadow-gray-800 h-12 px-4 w-[300px]"
-                  type="text"
-                  placeholder="Search body parts..."
-                  value={searchInput}
-                  onChange={handleSearchInputChange}
-                />
-                <button
-                  type="submit"
-                  className="bg-blue-400 rounded-r-full mx-1 p-2 flex items-center justify-center"
-                >
-                  <MdOutlineSearch className="text-3xl text-white" />
-                </button>
-              </form>
-            </div>
-          </div>
+          <Header />
 
           <p className="mt-6 text-2xl ml-3 text-gray-500 font-bold">Services</p>
           <div className="flex justify-evenly items-center mt-4">
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
               <img
                 src={doorstepImage}
-                alt="Skin"
+                alt="doorstep"
                 className="h-28 w-28 rounded-xl object-cover"
               />
               <p>Doorstop</p>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <img
-                src={emergencyImage}
-                alt="Skin"
-                className="h-28 w-28 rounded-xl object-cover"
-              />
-              <p>Emergancy</p>
+              <Link to="/body/Emergancy">
+                <img
+                  src={emergencyImage}
+                  alt="emergency"
+                  className="h-28 w-28 rounded-xl object-cover"
+                />
+                <p>Emergancy</p>
+              </Link>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <img
-                src={bloodImage}
-                alt="Skin"
-                className="h-28 w-28 rounded-xl object-cover"
-              />
-              <p>Blood</p>
+              <Link to="/body/blood">
+                <img
+                  src={bloodImage}
+                  alt="blood"
+                  className="h-28 w-28 rounded-xl object-cover"
+                />
+              </Link>
+              <Link to="/body/blood">Blood</Link>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
               <img
                 src={ambulanceImage}
-                alt="Skin"
+                alt="ambulance"
                 className="h-28 w-28 rounded-xl object-cover"
               />
               <p>Ambulance</p>
@@ -350,6 +261,7 @@ const Welcome = () => {
           </p>
         </div>
       </div>
+      <Navbar />
     </div>
   );
 };

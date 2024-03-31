@@ -72,12 +72,14 @@ const Welcome = () => {
               <Link to="/body/blood">Blood</Link>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <img
-                src={ambulanceImage}
-                alt="ambulance"
-                className="h-28 w-28 rounded-xl object-cover"
-              />
-              <p>Ambulance</p>
+              <Link to="/body/ambulance">
+                <img
+                  src={ambulanceImage}
+                  alt="ambulance"
+                  className="h-28 w-28 rounded-xl object-cover"
+                />
+                <p>Ambulance</p>
+              </Link>
             </div>
           </div>
 

@@ -34,6 +34,9 @@ import Emergancy from "./components/services/Emergancy";
 import Blood from "./components/services/Blood";
 import RequireBlood from "./components/services/RequireBlood";
 import DonateBlood from "./components/services/DonateBlood";
+import Subscribe from "./components/footer/Subscribe";
+import Payment from "./components/footer/Payment";
+import AmbulanceBooking from "./components/services/AmbulanceBooking";
 
 const App = () => {
   const [cookie] = useCookies(["token"]);
@@ -77,7 +80,9 @@ const App = () => {
             <Route path="/body/blood" element={<Blood />} />
             <Route path="/body/blood/donate" element={<DonateBlood />} />
             <Route path="/body/blood/require" element={<RequireBlood />} />
-
+            <Route path="/body/ambulance" element={<AmbulanceBooking />} />
+            <Route path="/packages/subscribe" element={<Subscribe />} />
+            <Route path="/packages/subscribe/payment" element={<Payment />} />
             <Route path="*" element={<Navigate to="/welcome" />} />
           </Routes>
         </>

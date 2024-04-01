@@ -7,7 +7,7 @@ import { FaLungs } from "react-icons/fa";
 import { GiStomach } from "react-icons/gi";
 import { GiBleedingEye } from "react-icons/gi";
 import { HiDotsHorizontal } from "react-icons/hi";
-import { set } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 function AmbulanceBooking() {
   const [heartSelect, setHeartSelect] = useState(false);
@@ -18,6 +18,7 @@ function AmbulanceBooking() {
   const [vomitingSelect, setVomitingSelect] = useState(false);
   const [eyeSelect, setEyeSelect] = useState(false);
   const [otherSelect, setOtherSelect] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   const handleHeartSelect = () => {
     setHeartSelect(true);
@@ -28,6 +29,7 @@ function AmbulanceBooking() {
     setVomitingSelect(false);
     setEyeSelect(false);
     setOtherSelect(false);
+    setSelectedPlan(true);
   };
 
   const handleBleedingSelect = () => {
@@ -39,6 +41,7 @@ function AmbulanceBooking() {
     setVomitingSelect(false);
     setEyeSelect(false);
     setOtherSelect(false);
+    setSelectedPlan(true);
   };
 
   const handleBodySelect = () => {
@@ -50,6 +53,7 @@ function AmbulanceBooking() {
     setVomitingSelect(false);
     setEyeSelect(false);
     setOtherSelect(false);
+    setSelectedPlan(true);
   };
   const handleHeadacheSelect = () => {
     setHeartSelect(false);
@@ -60,51 +64,66 @@ function AmbulanceBooking() {
     setVomitingSelect(false);
     setEyeSelect(false);
     setOtherSelect(false);
+    setSelectedPlan(true);
   };
   const handleRespiratorySelect = () => {
     setHeartSelect(false);
     setBleedingSelect(false);
     setBodySelect(false);
-    setHeadacheSelect(true);
-    setRespiratorySelect(false);
+    setHeadacheSelect(false);
+    setRespiratorySelect(true);
     setVomitingSelect(false);
     setEyeSelect(false);
     setOtherSelect(false);
+    setSelectedPlan(true);
   };
-  const handlevomitingSelect = () => {
+  const handleVomitingSelect = () => {
     setHeartSelect(false);
     setBleedingSelect(false);
     setBodySelect(false);
-    setHeadacheSelect(true);
+    setHeadacheSelect(false);
     setRespiratorySelect(false);
-    setVomitingSelect(false);
+    setVomitingSelect(true);
     setEyeSelect(false);
     setOtherSelect(false);
+    setSelectedPlan(true);
   };
   const handleEyeSelect = () => {
     setHeartSelect(false);
     setBleedingSelect(false);
     setBodySelect(false);
-    setHeadacheSelect(true);
+    setHeadacheSelect(false);
     setRespiratorySelect(false);
     setVomitingSelect(false);
-    setEyeSelect(false);
+    setEyeSelect(true);
     setOtherSelect(false);
+    setSelectedPlan(true);
   };
   const handleSetOtherSelect = () => {
     setHeartSelect(false);
     setBleedingSelect(false);
     setBodySelect(false);
-    setHeadacheSelect(true);
+    setHeadacheSelect(false);
     setRespiratorySelect(false);
     setVomitingSelect(false);
     setEyeSelect(false);
-    setOtherSelect(false);
+    setOtherSelect(true);
+    setSelectedPlan(true);
+  };
+
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    if (selectedPlan) {
+      navigate("/body/ambulance/details");
+    } else {
+      alert("Please select your Requirement.");
+    }
   };
 
   return (
     <div>
-      <p className="text-sky-600 text-3xl px-6 pt-6">Hey,</p>
+      <p className="text-sky-600 text-3xl px-6 pt-6 mt-6">Hey,</p>
       <p className="text-sky-700 font-bold text-3xl px-6">What happened?</p>
       <p className="text-blue-600 text-xl px-6 pt-4">
         Select an issue and know the first aid procedure
@@ -160,28 +179,59 @@ function AmbulanceBooking() {
           <p className="text-sm mt-5 font-bold mb-2">Headache</p>
         </div>
 
-        <div className="flex flex-col items-center p-1 pt-4 bg-blue-300 text-blue-800 w-1/3 rounded-xl">
+        <div
+          className={
+            respiratorySelect
+              ? "flex flex-col items-center p-1 pt-4 bg-blue-800 text-blue-300 w-1/3 rounded-xl"
+              : "flex flex-col items-center p-1 pt-4 bg-blue-300 text-blue-800 w-1/3 rounded-xl"
+          }
+          onClick={handleRespiratorySelect}
+        >
           <FaLungs className="text-3xl" />
           <p className="text-sm mt-5 font-bold mb-2">Respiratory</p>
         </div>
 
-        <div className="flex flex-col items-center p-1 pt-4 bg-red-300 text-red-700 w-1/3 rounded-xl">
+        <div
+          className={
+            vomitingSelect
+              ? "flex flex-col items-center p-1 pt-4 bg-red-700 text-red-300 w-1/3 rounded-xl"
+              : "flex flex-col items-center p-1 pt-4 bg-red-300 text-red-700 w-1/3 rounded-xl"
+          }
+          onClick={handleVomitingSelect}
+        >
           <GiStomach className="text-3xl" />
           <p className="text-sm mt-5 font-bold mb-2">Vomiting</p>
         </div>
       </div>
       <div className="flex space-x-6 p-6 ">
-        <div className="flex flex-col items-center p-1 pt-4 bg-red-200 text-red-700 w-1/3 rounded-xl">
+        <div
+          className={
+            eyeSelect
+              ? "flex flex-col items-center p-1 pt-4 bg-red-700 text-red-200 w-1/3 rounded-xl"
+              : "flex flex-col items-center p-1 pt-4 bg-red-200 text-red-700 w-1/3 rounded-xl"
+          }
+          onClick={handleEyeSelect}
+        >
           <GiBleedingEye className="text-3xl" />
           <p className="text-sm mt-5 font-bold mb-2">Eye</p>
         </div>
 
-        <div className="flex flex-col items-center p-1 pt-4 bg-pink-300 text-pink-800 w-2/3 rounded-xl">
+        <div
+          className={
+            otherSelect
+              ? "flex flex-col items-center p-1 pt-4 bg-pink-800 text-pink-300 w-2/3 rounded-xl"
+              : "flex flex-col items-center p-1 pt-4 bg-pink-300 text-pink-800 w-2/3 rounded-xl"
+          }
+          onClick={handleSetOtherSelect}
+        >
           <HiDotsHorizontal className="text-3xl" />
           <p className="text-sm mt-5 font-bold mb-2">Others</p>
         </div>
       </div>
-      <p className="fixed bottom-0 bg-sky-800 text-white uppercase p-6 w-full text-center font-bold text-2xl hover:bg-sky-300 cursor-pointer">
+      <p
+        className="fixed bottom-0 bg-sky-800 text-white uppercase p-6 w-full text-center font-bold text-2xl hover:bg-sky-300 cursor-pointer"
+        onClick={handleContinue}
+      >
         Continue
       </p>
     </div>

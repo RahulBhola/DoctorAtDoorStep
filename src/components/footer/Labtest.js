@@ -102,11 +102,13 @@ function Labtest() {
           </select>
         </div>
         <div
-        className="ml-28 rounded-xl py-4 bg-sky-800 text-white text-center font-bold uppercase mt-20 w-48"
-        onClick={handleSubmit}
-      >
-        Book Now
-      </div>
+          className="flex items-center justify-center"
+          onClick={handleSubmit}
+        >
+          <p
+          className="rounded-xl py-4 bg-sky-800 text-white text-center font-bold uppercase mt-20 w-48 cursor-pointer hover:bg-sky-300"
+          >Book Now</p>
+        </div>
       </div>
 
       <Navbar />

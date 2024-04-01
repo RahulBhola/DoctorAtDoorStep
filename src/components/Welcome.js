@@ -44,12 +44,14 @@ const Welcome = () => {
           <p className="mt-6 text-2xl ml-3 text-gray-500 font-bold">Services</p>
           <div className="flex justify-evenly items-center mt-4">
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
-              <img
-                src={doorstepImage}
-                alt="doorstep"
-                className="h-28 w-28 rounded-xl object-cover"
-              />
-              <p>Doorstop</p>
+              <Link to="/body/ambulance/details">
+                <img
+                  src={doorstepImage}
+                  alt="doorstep"
+                  className="h-28 w-28 rounded-xl object-cover"
+                />
+                <p>Doorstop</p>
+              </Link>
             </div>
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
               <Link to="/body/Emergancy">

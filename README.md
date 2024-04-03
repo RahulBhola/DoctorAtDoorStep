@@ -64,10 +64,10 @@
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/45afa98f-37e4-422b-bf66-0f16700307ff)
 
    After clicking valid reason
-   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/11c7fcfe-823e-4828-8ea6-c7cbc55c0449)
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/d02bc6d7-6b27-4bbc-8dee-8ecb33092128)
 
    After clicking Locate Me
-   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/8d377d0d-9e8b-47dc-bc52-9a41eef88840)
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/11c7fcfe-823e-4828-8ea6-c7cbc55c0449)
 
    Payment Screen after clicking on PLUS ICON
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/d2b5ee67-9654-4d2d-be92-bb87debaf5ee)

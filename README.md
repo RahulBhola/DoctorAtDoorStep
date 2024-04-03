@@ -91,7 +91,12 @@
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/6eab34c4-2522-428c-b85e-ec12000ff6db)
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/a7f19817-5094-42c7-8ccc-316bd869e326)
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/a929afa9-440d-421f-96c8-a8a9d315ec1c)
-
+   After clicking Subsicibe now
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/bc29def6-3559-4e9f-8434-4fbf4aa51c34)
+   Selecting Particular Package
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/8d659d7a-a48f-42ad-b80f-e3140a6c7f8d)
+   After clicking Subscirbe
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/df8d5d9d-8cde-4f6b-a454-d8656282c702)
 
    2.11.4 LabTest Page
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/3db3c91d-5136-4d0e-84bc-ba0c270c95d8)

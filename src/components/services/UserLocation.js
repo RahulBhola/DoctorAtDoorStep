@@ -57,19 +57,19 @@ function UserLocation() {
           center={center}
           zoom={Z00M_LEVEL}
           ref={mapRef}
-          // className="h-96 w-full"
         >
           <TileLayer
             url={osm.maptiler.url}
             attribution={osm.maptiler.attribution}
           />
+          {/* Your Loaction Marker */}
           {location.loaded && !location.error && (
             <Marker
               icon={markerIcon}
               position={[location.coordinates.lat, location.coordinates.lng]}
             ></Marker>
           )}
-          
+          {/* Hospital Loaction Marker */}
           {cities.map((city,idx)=>
             <Marker icon={hosptialMarkIcon} position={[city.lat, city.lng]} className="bg-sky-700">
               <Popup>

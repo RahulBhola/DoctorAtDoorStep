@@ -54,9 +54,9 @@ function Header() {
 
               <Dropdown.Item
                 className="w-32 pl-3 py-1 text-gray-300 hover:cursor-pointer hover:bg-gray-500"
-                onClick={() => navigate("/profile")}
+                onClick={() => navigate("/packages/subscribe")}
               >
-                Appointments
+                Packages
               </Dropdown.Item>
 
               <Dropdown.Item

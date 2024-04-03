@@ -38,6 +38,8 @@ import Subscribe from "./components/footer/Subscribe";
 import Payment from "./components/footer/Payment";
 import AmbulanceBooking from "./components/services/AmbulanceBooking";
 import UserLocation from "./components/services/UserLocation";
+import Profile from "./components/header/Profile";
+import EditProfile from "./components/header/EditProfile";
 
 const App = () => {
   const [cookie] = useCookies(["token"]);
@@ -53,6 +55,8 @@ const App = () => {
               element={loggedIn ? <Welcome /> : <StarterPage />}
             />
             <Route path="/welcome" element={<Welcome />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/edit-profile" element={<EditProfile />} />
             <Route path="/body/skin" element={<Skin />} />
             <Route path="/body/Dental" element={<Dental />} />
             <Route path="/body/eye" element={<Eye />} />

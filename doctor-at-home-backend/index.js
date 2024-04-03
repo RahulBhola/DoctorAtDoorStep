@@ -1,17 +1,18 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const JwtStrategy = require('passport-jwt').Strategy,
-    ExtractJwt = require('passport-jwt').ExtractJwt;
+const JwtStrategy = require("passport-jwt").Strategy,
+  ExtractJwt = require("passport-jwt").ExtractJwt;
 require("dotenv").config(); // to hide password
 const passport = require("passport");
 const User = require("./models/user");
-const authRoutes = require("./routes/auth")
+const authRoutes = require("./routes/auth");
 const cors = require("cors");
 const app = express();
 const port = 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(passport.initialize());
 
 mongoose
   .connect(
@@ -51,10 +52,24 @@ passport.use(
     });
   })
 );
+passport.use(
+  new JwtStrategy(opts, async function (jwt_payload, done) {
+    try {
+      const user = await User.findById(jwt_payload.identifier);
+      if (user) {
+        return done(null, user);
+      } else {
+        return done(null, false);
+      }
+    } catch (err) {
+      return done(err, false);
+    }
+  })
+);
+
 
 app.use("/auth", authRoutes);
 
 app.listen(port, () => {
-    console.log("Server is running on port 3000");
-  });
-  
+  console.log("Server is running on port 3000");
+});

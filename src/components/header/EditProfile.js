@@ -34,7 +34,7 @@ function EditProfile() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
-        <div className="font-bold mt-4 text-xl">User Profile</div>
+        <div className="font-bold mt-4 text-xl">Edit Profile</div>
         <div className="flex relative cursor-pointer">
           <img
             src={maleUserImage}

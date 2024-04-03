@@ -1,22 +1,37 @@
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/bfcc7d1e-ffb7-459b-9498-bb0c4fc61ac0)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/2ca6a0a9-ae05-4ae9-824f-0862a88b9de6)
+Here is my project Summary:-
 
+1. Created backend using MERN Stack and develop Login, SignIn Page and also develop Profile Section where user can edit his/her profile.
+2. Created frontend using Ractjs and tailwindcss and develop whole UI part which include following that are listed below:
 
+   2.1 Getting Started Page
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/f6a87216-7e8e-4463-a68e-746041c3afd1)
 
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/ff9846f0-314d-43da-a89f-d64c4e22c8fe)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/a9e3f235-cd35-4b52-88bc-cb843a84fa6f)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/6bac45ed-c736-4b7c-a8e1-eaa0f6f95a9b)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/cec0381c-a6c1-4407-a8d0-63ac06fcc3f1)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/366515e8-2908-4c9e-8261-399a16a43021)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/bb01491c-8a5f-4d9a-9595-729f41aac90d)
+   When user clicked then it redirects to Login Page!
 
+   2.2 Login Page
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/917d5ce5-e057-4c7c-9e49-9d2d47a0c612)
 
+   If user is an exiting user then he can simply login else go to signIn Page
 
+   2.3 SignIn Page
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/30ffcccc-92d3-4337-a89c-6154873f25ce)
 
+   After Login or SignIn user redirects to Welcome page or acts as a home screen page
 
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/c0707dca-e0a7-40af-bc8d-d3d5622efde1)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/23dc3693-b47d-442e-a92a-1b76724a12a7)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/44dd790d-c423-4daa-8e80-3b7a79a0da1c)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/7b528d53-64dc-485b-bd36-74ec409cc048)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/f9e5d6a2-f88d-4e2b-8b57-bd301c415ca0)
-![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/e3346b2d-5964-4657-a708-133c497e47e7)
+   2.4 Welcome Page
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/2ebd23c3-7c8b-4e41-ba79-cbd45dac3e2d)
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/c2e0f679-0b12-4b75-9685-0b667cd41030)
+
+   User can check for Header Page which consists of Profile, Package, ContactUs and Logout
+
+   2.5 Profile
+
+   2.5.1 User Profile
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/abab3762-661a-49f4-93c0-8380e2d29bda)
+
+   2.5.2 Edit Profile
+   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/a5cc11ac-7e97-484a-9a1d-ce3944825b89)
+
+   User can check for Service Section which consists of Doorstep, Emergency, Blood, and Ambulance Pages
+
+   

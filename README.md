@@ -1,6 +1,16 @@
-)Here is my project Summary:-
+Here is my project Summary:-
 
 1. Created backend using MERN Stack and develop Login, SignIn Page and also develop Profile Section where user can edit his/her profile.
+
+   // backend
+   
+   cd doctor-at-home-backend
+   npm install body-parser express mongoose jsonwebtoken nodemailer nodemon cors axios
+   npm i dotenv
+   npm start
+   npm i passport passport-jwt
+   npm i bcrypt
+   npm i jsonwebtoken
 
    1.1 MongoDb Page
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/3df04024-1c19-4cc9-9866-ffedca0f1fd0)
@@ -21,6 +31,21 @@
 
    
 3. Created frontend using Ractjs and tailwindcss and develop whole UI part which include following that are listed below:
+
+   npx create-react-app doctor-at-home
+   cd doctor-at-home
+   code .
+   npm run start
+   npm install -D tailwindcss 
+   npm tailwindcss init
+   npm install react-icons --save
+   npm install react-multi-carousel
+   npm i react-cookie
+   npm install react-bootstrap bootstrap
+   npm install date-fns
+   npm i react-leaflet leaflet --save
+   npm install sweetalert2
+   npm i email-com
 
    2.1 Getting Started Page
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/f6a87216-7e8e-4463-a68e-746041c3afd1)

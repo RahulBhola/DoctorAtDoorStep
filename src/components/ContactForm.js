@@ -133,7 +133,7 @@ function Profile() {
             onChange={(e) => setMessage(e.target.value)}
             value={message}
             className="m-6 mt-6 rounded-xl shadow-2xl p-4"
-            cols="45"
+            cols="39"
             rows="8"
           ></textarea>
         </div>

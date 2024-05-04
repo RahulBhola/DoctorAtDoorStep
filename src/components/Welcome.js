@@ -16,8 +16,11 @@ import emergencyImage from "../assets/emergency.jpg";
 import doorstepImage from "../assets/doorstep.png";
 import Navbar from "./footer/FixedFooter";
 import Header from "./header/Header";
+import diaPredict from "../assets/DiabetesPrediction.png";
+import { FaArrowRight } from "react-icons/fa";
 
 const Welcome = () => {
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -35,12 +38,16 @@ const Welcome = () => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+  const redirectToPrediction = () => {
+    window.location.href = "https://prediction-t7v3maa6qhqqjvdhwfhezz.streamlit.app/";
+  };
   return (
     <div className="w-[100%]">
       <div>
         <div>
           <Header />
 
+          {/** Services Section */}
           <p className="mt-6 text-2xl ml-3 text-gray-500 font-bold">Services</p>
           <div className="flex justify-evenly items-center mt-4">
             <div className="m-2 flex flex-col justify-evenly items-center shadow-md shadow-gray-300 p-2 ">
@@ -85,6 +92,25 @@ const Welcome = () => {
             </div>
           </div>
 
+          {/** Diabetes Prediction Section */}
+          <p className="mt-6 text-2xl ml-3 text-gray-500 font-bold">Diabetes Prediction</p>
+          <div className="relative top-1 p-2">
+            <div className="border border-sky-800 rounded-2xl rounded-b-3xl">
+              <img
+                src={diaPredict}
+                alt="Diabetes Prediction Image"
+                className="w-full h-48 rounded-2xl"
+                // style={{ filter: "brightness(80%)" }}
+              />
+              <div className="flex items-center justify-center p-2 rounded-full space-x-2 bg-sky-800 text-white text-lg font-bold hover:bg-purple-300 cursor-pointer shadow-2xl"
+              onClick={redirectToPrediction}>
+                <div>Test Now</div>
+                <FaArrowRight />
+              </div>
+            </div>
+        </div>
+
+          {/** Recently Added Section */}
           <div className="w-[100%] mt-2">
             <p className="ml-3 text-2xl text-gray-400 font-bold">
               Recently Added
@@ -109,10 +135,10 @@ const Welcome = () => {
             >
               <div className="bg-sky-200 flex p-2 h-40 m-4 mb-6 rounded-xl">
                 <div className="p-6">
-                  <p className="font-bold text-2xl text-gray-700">
+                  <p className="font-bold text-xl text-gray-700">
                     Dr.Aman (Eye specialist)
                   </p>
-                  <p>Rating - ⭐⭐⭐⭐</p>
+                  <p>Rating ⭐⭐⭐⭐</p>
                 </div>
                 <img
                   className="h-30 w-40 rounded-full"
@@ -122,10 +148,10 @@ const Welcome = () => {
               </div>
               <div className="bg-sky-200 flex p-2 h-40 m-4 rounded-xl">
                 <div className="p-6">
-                  <p className="font-bold text-2xl text-gray-700">
+                  <p className="font-bold text-xl text-gray-700">
                     Dr.Priti (Heart specialist)
                   </p>
-                  <p>Rating - ⭐⭐⭐⭐</p>
+                  <p>Rating ⭐⭐⭐⭐</p>
                 </div>
                 <img
                   className="h-30 w-40 rounded-full"
@@ -135,10 +161,10 @@ const Welcome = () => {
               </div>
               <div className="bg-sky-200 flex p-2 h-40 m-4 rounded-xl">
                 <div className="p-6">
-                  <p className="font-bold text-2xl text-gray-700">
+                  <p className="font-bold text-xl text-gray-700">
                     Dr.Roy (Eye specialist)
                   </p>
-                  <p>Rating - ⭐⭐⭐⭐</p>
+                  <p>Rating ⭐⭐⭐⭐</p>
                 </div>
                 <img
                   className="h-30 w-40 rounded-full"
@@ -148,10 +174,10 @@ const Welcome = () => {
               </div>
               <div className="bg-sky-200 flex p-2 h-40 m-4 rounded-xl">
                 <div className="p-6">
-                  <p className="font-bold text-2xl text-gray-700">
+                  <p className="font-bold text-xl text-gray-700">
                     Dr.Salini (Skin specialist)
                   </p>
-                  <p>Rating - ⭐⭐⭐⭐</p>
+                  <p>Rating ⭐⭐⭐⭐</p>
                 </div>
                 <img
                   className="h-30 w-40 rounded-full"
@@ -162,6 +188,7 @@ const Welcome = () => {
             </Carousel>
           </div>
 
+          {/* Categories Section */ }
           <p className="text-2xl text-gray-500 ml-4 m-2 font-bold">
             Categories
           </p>
@@ -173,7 +200,7 @@ const Welcome = () => {
               <img
                 src={skinImage}
                 alt="Skin"
-                className="h-32 w-32 rounded-xl object-cover"
+                className="h-28 w-28 rounded-xl object-cover"
               />
               <p className="text-center">Skin</p>
             </Link>
@@ -185,7 +212,7 @@ const Welcome = () => {
               <img
                 src={dentalImage}
                 alt="Dental"
-                className="h-32 w-32 rounded-xl object-cover"
+                className="h-28 w-28 rounded-xl object-cover"
               />
               <p className="text-center">Dental</p>
             </Link>
@@ -197,7 +224,7 @@ const Welcome = () => {
               <img
                 src={eyeImage}
                 alt="Eye"
-                className="h-32 w-32 rounded-xl object-cover"
+                className="h-28 w-28 rounded-xl object-cover"
               />
               <p className="text-center">Eye</p>
             </Link>
@@ -209,7 +236,7 @@ const Welcome = () => {
               <img
                 src={heartImage}
                 alt="Heart"
-                className="h-28 w-32 rounded-xl object-cover"
+                className="h-28 w-28 rounded-xl object-cover"
               />
               <p className="text-center">Heart</p>
             </Link>
@@ -220,7 +247,7 @@ const Welcome = () => {
               <img
                 src={kidneyImage}
                 alt="Kidney"
-                className="h-28 w-32 rounded-xl object-cover"
+                className="h-28 w-28 rounded-xl object-cover"
               />
               <p className="text-center">Kidney</p>
             </Link>
@@ -231,7 +258,7 @@ const Welcome = () => {
               <img
                 src={lungsImage}
                 alt="Lungs"
-                className="h-28 w-32 rounded-xl object-cover"
+                className="h-28 w-28 rounded-xl object-cover"
               />
               <p className="text-center">Lungs</p>
             </Link>
@@ -242,7 +269,7 @@ const Welcome = () => {
               <img
                 src={liverImage}
                 alt="Liver"
-                className="h-28 w-32 rounded-xl object-cover"
+                className="h-28 w-28 rounded-xl object-cover"
               />
               <p className="text-center">Liver</p>
             </Link>

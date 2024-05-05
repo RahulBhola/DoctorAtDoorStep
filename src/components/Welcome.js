@@ -98,7 +98,7 @@ const Welcome = () => {
             <div className="border border-sky-800 rounded-2xl rounded-b-3xl">
               <img
                 src={diaPredict}
-                alt="Diabetes Prediction Image"
+                alt="DiabetesPrediction"
                 className="w-full h-48 rounded-2xl"
                 // style={{ filter: "brightness(80%)" }}
               />

@@ -10,7 +10,7 @@ import cities from "./cities.json";
 
 function UserLocation() {
   const navigate = useNavigate();
-  const [center, setCenter] = useState({ lat: 13.084622, lng: 80.248357 });
+  const [center, ] = useState({ lat: 13.084622, lng: 80.248357 });
   const Z00M_LEVEL = 8;
   const mapRef = useRef();
 

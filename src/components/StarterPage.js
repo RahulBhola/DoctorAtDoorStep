@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
 // import img1 from "./login.png";
 import img1 from "../assets/starterImg.png";
@@ -8,8 +8,8 @@ import { CiLocationArrow1 } from "react-icons/ci";
 
 const StarterPage = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
 
   // useEffect(() => {
   //   fetchEmailAndPassword();

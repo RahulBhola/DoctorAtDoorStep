@@ -13,7 +13,7 @@ function UserSignIn() {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [cookie, setCookie] = useCookies(["token"]);
+  const [, setCookie] = useCookies(["token"]);
 
   const navigate = useNavigate();
 

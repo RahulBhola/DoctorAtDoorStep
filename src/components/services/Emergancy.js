@@ -1,30 +1,28 @@
 import React from 'react'
-import { FaPhoneAlt } from "react-icons/fa";
+import emg from "../../assets/emergency.png";
+import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Emergancy() {
+  const navigate = useNavigate();
+
   return (
-    <div className='flex flex-col justify-center items-center bg-blue-200 h-screen w-full'>
-        
-        <img className='h-[200px] w-30 mb-8 rounded-full shadow-md' src='https://cdn.vectorstock.com/i/500p/24/94/symbol-of-medicine-cross-vector-15322494.avif' alt='/'/>
-        <p className='font-semibold text-2xl'>Ambulance <span className='text-red-700 font-bold text-4xl'>24*7</span></p>
-        <div className='mt-20'>
-            <div className='flex m-2 justify-center items-center space-x-9'>
-                <img className='h-20 w-20 rounded-full' src='https://cdn.vectorstock.com/i/500p/00/08/ambulance-car-icon-vector-20760008.avif' alt='/'/>
-                <p className='font-semibold text-2xl text-gray-600'>100-00000</p>
-                <FaPhoneAlt className='text-green-600'/>
-            </div>
-            <div className='flex m-2 justify-center items-center space-x-9'>
-                <img className='h-20 w-20 rounded-full' src='https://cdn.vectorstock.com/i/500p/00/08/ambulance-car-icon-vector-20760008.avif' alt='/'/>
-                <p className='font-semibold text-2xl text-gray-600'>100-00000</p>
-                <FaPhoneAlt className='text-green-600'/>
-            </div>
-            <div className='flex m-2 justify-center items-center space-x-9'>
-                <img className='h-20 w-20 rounded-full' src='https://cdn.vectorstock.com/i/500p/00/08/ambulance-car-icon-vector-20760008.avif' alt='/'/>
-                <p className='font-semibold text-2xl text-gray-600'>100-00000</p>
-                <FaPhoneAlt className='text-green-600'/>
-            </div>
+    <div>
+        <img src={emg} alt="emergency" className="rounded-b-3xl"/>
+        <div className="flex flex-col items-center rounded-3xl p-6">
+            <p className='uppercase text-3xl font-bold text-center mt-4 mb-2 text-red-600'>
+                Emergency Assistance for Customers
+            </p>
+            <p className='text-center text-gray-600 mb-6'>
+                Click in button below to call in case of emergency we will reach you out in 30 seconds.
+            </p>
+        <button className="flex justify-center items-center bg-red-500 text-white py-2 px-4 rounded-full shadow hover:bg-red-600 transition duration-300 w-full py-3 "
+        onClick={() => navigate("/body/Emergancy/EmergencyTwo")}>
+            <p>Let's get started</p>
+            <FaArrowRight className='ml-2'/>
+        </button>
         </div>
-      
     </div>
-  )
+)
 }

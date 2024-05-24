@@ -31,6 +31,7 @@ import Packages from "./components/footer/Packages";
 import Labtest from "./components/footer/Labtest";
 import Consult from "./components/footer/Consult";
 import Emergancy from "./components/services/Emergancy";
+import EmergancyTwo from "./components/services/EmergancyTwo";
 import Blood from "./components/services/Blood";
 import RequireBlood from "./components/services/RequireBlood";
 import DonateBlood from "./components/services/DonateBlood";
@@ -82,6 +83,7 @@ const App = () => {
             <Route path="/labtest" element={<Labtest />} />
             <Route path="/consult" element={<Consult />} />
             <Route path="/body/Emergancy" element={<Emergancy />} />
+            <Route path="/body/Emergancy/EmergencyTwo" element={<EmergancyTwo />} />
             <Route path="/body/blood" element={<Blood />} />
             <Route path="/body/blood/donate" element={<DonateBlood />} />
             <Route path="/body/blood/require" element={<RequireBlood />} />

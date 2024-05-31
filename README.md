@@ -93,7 +93,8 @@ Here is my project Summary:-
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/ab115e31-ab49-4f50-a770-f3dee30eee54)
 
    2.7 Emergency Page
-   ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/50657c89-fdb9-4b51-a0f6-111968e550a1)
+   ![Screenshot (6)](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/c5f1ea8c-f3d1-4b2e-bac9-0b2275e1b0d8)
+   ![Screenshot (7)](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/6d575c7f-5d52-4d15-9013-83e8e31d7527)
 
    2.8 Blood Page
    ![image](https://github.com/RahulBhola/DoctorAtDoorStep/assets/104344946/aacafb2d-5287-4a88-9983-4b70ed4a59c7)
